@@ -1,0 +1,24 @@
+section.team
+    div.title
+        div.title_rightUpBox
+        span.title_about Our <span>team</span>
+        div.title_leftDownBox
+    div.container
+        .slider__arrows
+            .slider__arrow.slider__arrow-prev 
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            .slider__arrow.slider__arrow-next 
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        .team__slider
+            each val in [1,2,3,4,5,6]
+                .slider_item
+                    img(src="http://via.placeholder.com/200x200")
+                    .slider_item-descr
+                        h3 Vitalik Vvitto
+                        div Web-developer/Front-end
+                        .slider_item-feedback
+                            a(href="#")
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                        .slider_item-feedback
+                            a(href="#")
+                                <i class="fa fa-google" aria-hidden="true"></i>

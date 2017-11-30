@@ -1,0 +1,48 @@
+.skills
+    text-align: center
+    &__wrapper
+        margin: 100px 0px
+    &__item
+        display: inline-block
+        width: 300px
+        margin: 20px 40px
+        font-family: Lato-HairlineBold
+    &__name
+        color: darken($darkGrey, 15%)
+        display: inline-block
+        float: left
+    &__pers
+        display: inline-block
+        float: right
+        color: #b7b7b7
+        font-family: Lato-HairlineReg
+
+    &__loader
+        height: 15px
+        width: 100%
+        background-color: #eee
+        margin-top: 30px
+        &-inner
+            height: 15px
+            width: 0px
+            background-color: $purple
+            transition: all 2s
+
+
+        .per-90
+            width: 90%
+        .per-70
+            width: 70%
+        .per-85
+            width: 85%
+        .per-75
+            width: 75%
+
+    @media screen and (max-width: 440px)
+        &__item
+            width: auto
+            display: block
+            height: 45px
+        &__loader
+            position: relative
+            top: 30px

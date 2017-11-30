@@ -1,7 +1,92 @@
-.section
-    width: 100px
-    height: 100px
-    background-color: red
-h1
-    font-size: 48px
-    color: blue
+@import "fonts.sass"
+@import "variables.sass"
+
+body, html
+    padding: 0px
+    margin: 0px
+    height: 100%
+    width: 100%
+
+h1,h2,h3,h4,h5
+    margin: 0px
+
+.page-wrapper
+    height: 100%
+    .container
+        max-width: 1140px
+        margin: auto
+ul
+    padding: 0px
+    margin: 0px
+    list-style: none
+a
+    text-decoration: none
+
+section
+    font-family: Lato-HairlineReg
+
+.title
+    width: 200px
+    height: 70px
+    margin: auto
+    margin-top: 60px
+    position: relative
+    display: flex
+    justify-content: center
+    font-size: $middleFont
+    font-family: Lato-HairlineReg
+    color: $darkGrey
+    .title_about
+        align-self: center
+        letter-spacing: 2px
+        span
+            color: $purple
+    .title_rightUpBox
+        position: absolute
+        width: 25px
+        height: 25px
+        top: 0px
+        right: 0px
+        border:
+            top: solid 1px $purple
+            right: solid 1px $purple
+    .title_leftDownBox
+        position: absolute
+        width: 25px
+        height: 25px
+        bottom: 0px
+        left: 0px
+        border:
+            left: solid 1px $purple
+            bottom: solid 1px $purple
+
+.button-purple
+    padding: 15px 50px
+    background-color: $purple
+    border-radius: 4px
+    border: 0px
+    border-bottom: solid 4px darken($purple, 15%)
+    color: white
+    display: inline-block
+    cursor: pointer
+    font-family: Lato-HairlineReg
+    font-size: $smallFont
+    transition: all 200ms
+    &:hover
+        border-bottom-width: 6px
+        transition: all 200ms
+    &:active
+        border-bottom-width: 1px
+        transition: all 200ms
+
+
+@import "header/header.sass"
+// @import "navigation/navigation.sass"
+@import "feature/feature.sass"
+@import "about/about.sass"
+@import "quote/quote.sass"
+@import "ourteam/ourteam.sass"
+@import "skills/skills.sass"
+@import "statistic/statistic.sass"
+@import "portfolio/portfolio.sass"
+@import "contact/contact.sass"

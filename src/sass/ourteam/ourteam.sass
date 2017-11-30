@@ -1,0 +1,56 @@
+.team
+    .slider__arrows
+        display: flex
+        justify-content: center
+        
+        .slider__arrow
+            background-image: url(/assets/images/shape-min.png)
+            line-height: 55px
+            background-size: cover
+            width: 50px
+            height: 55px
+            margin: 50px 0px
+            text-align: center
+            color: $purple
+            transition: all 200ms
+            i
+                position: relative
+            &:hover
+                transform: scale(1.1)
+                cursor: pointer
+            &:first-child
+                i
+                    left: -1px
+            &:last-child
+                i
+                    right: -2px
+    &__slider
+        .slider_item
+            outline: none
+            text-align: center
+            &-descr
+                margin: 40px 0px
+                h3
+                    font-family: Lato-HairlineReg
+                div
+                    font-family: Lato-HairlineThin
+                    margin: 10px 0px
+                .slider_item-feedback
+                    display: inline-block
+                    height: 30px
+                    width: 30px
+                    border: solid 1px #b7b7b7
+                    border-radius: 30px
+                    text-align: center
+                    line-height: 30px
+                    margin: 20px 10px
+                    cursor: pointer
+                    transition: border 200ms
+                    &:hover
+                        border: solid 1px #333
+                    a
+                        text-decoration: none
+                        color: #333333
+            img 
+                margin: auto
+                border-radius: 100% 

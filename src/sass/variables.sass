@@ -1,0 +1,56 @@
+$purple: #9f449b;
+$darkGrey: #676767;
+$lightGrey: #eeeeee;
+
+$smallFont: 16px;
+$middleFont: 24px;
+$largeFont: 42px;
+
+
+@mixin shape($shape, $hover)
+    margin: auto
+    cursor: pointer
+    text-align: center
+    background-image: url( $shape )
+    background-size: cover
+    width: 150px
+    height: 160px
+    position: relative
+    align-items: center
+    display: flex
+    
+    div
+        margin: auto
+        display: block
+        img
+            display: block
+            margin: auto
+            display: flex
+            position: relative
+            z-index: 1000
+        span
+            display: block
+            color: white
+            margin: 10px 0px
+            font-family: "Lato-HairlineBold"
+            position: relative
+            z-index: 1000
+    &:after
+        position: absolute
+        display: block
+        float: left
+        top: 0px
+        content: ""
+        width: 100%
+        height: 100%
+        transition: all 300ms
+        background-image: url( $hover )
+        background-size: cover
+        opacity: 0.0
+    &:hover
+        &:after
+            opacity: 1.0
+            transition: all 300ms
+            transform: scale(1.01)
+
+

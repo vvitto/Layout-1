@@ -5,8 +5,24 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Document
+        link(rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css")
+        link(rel="stylesheet", href="js/slick/slick/slick.css")
+        link(rel="stylesheet", href="js/slick/slick/slick-theme.css")
         link(rel="stylesheet", href="css/main.css")
     body
-        include block.pug
-        div World Hello!
-        h1 This this a h1 tag
+        div.page-wrapper
+            include ./header.pug
+            //include ./navigation.pug
+            include ./feature.pug
+            include ./about.pug
+            include ./quote.pug
+            include ./ourteam.pug
+            include ./skills.pug
+            include ./quote.pug
+            include ./statistic.pug
+            include ./portfolio.pug
+            include ./contact.pug
+
+        script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
+        script(src="js/slick/slick/slick.min.js")
+        script(src="js/main.js")

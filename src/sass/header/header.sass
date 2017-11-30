@@ -1,0 +1,47 @@
+.header
+    background-image: url("../assets/images/header_bg.png")
+    background-size: cover
+    padding: 95px 0px 25px 0px
+    &__title
+        text-align: center
+        font-family: "Existence"
+        font-size: 75px
+        color: white
+        letter-spacing: 3px
+        span
+            color: $purple
+        @media screen and (max-width: 440px)
+            font-size: 50px
+    &__subtitle
+        font-family: "Lato-HairlineThin"
+        color: white
+        text-align: center
+        font-size: $largeFont
+        margin-top: 40px
+    p
+        font-size: $middleFont
+        color: white
+        text-align: center
+        font-family: "Lato-HairlineThin"
+    
+    &__list
+        margin: 80px 0px
+        padding: 0px
+        text-align: center
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-around
+        list-style: none
+        &-item
+            +shape("../assets/images/shape.png", "../assets/images/shape-hover.png")
+        
+    &__scroller
+        text-align: center
+        color: white
+        font-size: 90px
+        background-image: url(../assets/images/shape.png)
+        background-size: cover
+        width: 100px
+        height: 108px
+        margin: auto
+        transform: rotate(90deg)

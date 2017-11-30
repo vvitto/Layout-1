@@ -1,0 +1,23 @@
+.feature
+    background-color: $lightGrey
+    padding: 100px 0px
+    .container
+        display: flex
+        justify-content: space-around
+        flex-wrap: wrap
+    &__item
+        flex-basis: 200px
+        text-align: center
+        font-size: $smallFont
+        font-family: "Lato-HairlineReg"
+        color: $darkGrey
+        line-height: 1.8em
+        letter-spacing: 1px
+        span
+            font-size: $middleFont
+            padding: 15px 0px
+            display: block
+            position: relative
+        &_icon
+            +shape("../assets/images/shape-grey.png", "../assets/images/shape-hover-border.png")
+            margin-bottom: 20px

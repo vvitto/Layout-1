@@ -1,0 +1,27 @@
+.about
+    font-family: Lato-HairlineReg
+    font-size: $smallFont
+    .container
+        display: flex
+        margin: 60px auto
+        flex-wrap: wrap
+        .img-wrap
+            display: inline-block
+            flex-basis: 50%
+            img
+                width: 100%
+        @media screen and (max-width: 800px)
+            .img-wrap, .about__descr
+                flex-basis: 100%
+    &__descr
+        flex-basis: 50%
+        position: relative
+        padding: 20px
+        box-sizing: border-box
+        padding-bottom: 60px
+        &_text
+            text-align: left
+            line-height: 30px
+        .button-purple
+            position: absolute
+            bottom: 0px

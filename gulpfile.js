@@ -14,12 +14,19 @@ gulp.task("sass", function(){
             .pipe(browserSync.reload({stream: true}));
 });
 
+function onError(err) {
+    console.log(err);
+    this.emit('end');
+  }
+
 gulp.task("pug", function(){
     return gulp.src("src/pug/index.pug")
-            .pipe(pug())
+            .pipe(pug().on("error", onError))
             .pipe(gulp.dest("src/"))
             .pipe(browserSync.reload({stream: true}));
 });
+
+
 
 gulp.task("browserSync", function(){
     browserSync({

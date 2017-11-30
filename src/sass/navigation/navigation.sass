@@ -1,0 +1,39 @@
+.navigation
+    height: 100px
+    width: 100%
+    display: flex
+    align-items: center
+    .container
+        display: flex
+        width: 100%
+        justify-content: space-between
+        align-items: center
+        @media screen and (max-width: 840px)
+            padding: 0px 30px
+    .logo
+        float: left
+        font-size: $largeFont
+        font-family: "Lato-HairlineThin"
+        color: $darkGrey
+        span
+            color: $purple
+    .list-trigger
+        display: none
+        font-size: 30px
+        @media screen and (max-width: 840px)
+            display: block
+    &__list
+        float: right
+        @media screen and (max-width: 840px)
+            display: none
+            &_item
+                display: block
+        &_item
+            display: inline-block
+            margin-right: 25px
+            font-family: "Lato-HairlineBold"
+            color: $darkGrey
+            font-size: $smallFont
+            &:hover
+                color: $purple
+                cursor: pointer
