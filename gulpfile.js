@@ -28,7 +28,11 @@ gulp.task("pug", function(){
             .pipe(browserSync.reload({stream: true}));
 });
 
-
+gulp.task("watch", ['browserSync', 'sass'], function(){
+    gulp.watch("src/sass/**/*.sass", ["sass"]);
+    gulp.watch("src/pug/**/*.pug", ['pug']);
+    gulp.watch('src/js/**/*.js', browserSync.reload);
+});
 
 gulp.task("browserSync", function(){
     browserSync({

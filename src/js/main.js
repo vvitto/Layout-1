@@ -68,41 +68,49 @@ $(document).ready(function(){
         });
     });
 
+
+
+    //var defHeight = $(".quote").height();
+   
+
     var video_pause = true;
-    
     $(".quote").on("click", function(){
+        var videoFrame = $(this).children()[1];
+        var mainSection = $(this);
         var preview = $(this).children()[0];
-        var videoFrame = this.children[1];
-        var scrollTop = $(this).offset().top;
+        var d = ($(window).height() - $(videoFrame).height()) / 2;
 
         if(video_pause){
 
-            $(preview).css("display", "none");
-            
-            $("html, body").animate({
-                scrollTop : scrollTop
+            $(preview).animate({
+                opacity: "0.0"
+            }, 1000);
+            $(this).animate({
+                "max-height": $(videoFrame).height()
             }, 1000);
 
-            $(this).animate({
-                "height" : $("html, body").css("height")
+            
+            $("html, body").animate({
+                scrollTop: $(mainSection).offset().top - d
             }, 1000, function(){
                 videoFrame.play();
-                video_pause = false;
             });
-            
-        }else{
-            videoFrame.pause();
+            video_pause = false;
+        }else{         
             video_pause = true;
-            $(this).animate({
-                "height" : "400px"
-            }, 1000, function(){
-                $(preview).css("display", "block");
-            });
-            $("html, body").animate({
-                scrollTop : $(this).offset().top - 150
+            videoFrame.pause();
+
+            $(preview).animate({
+                opacity: "1.0"
             }, 1000);
-            
+            $(this).animate({
+                "max-height": 400
+            }, 1000);
+
+            $("html, body").animate({
+                scrollTop: $(mainSection).offset().top
+            }, 1000);
         }
-        
-    })
+    });
+
 });

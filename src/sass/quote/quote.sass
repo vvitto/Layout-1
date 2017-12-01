@@ -1,33 +1,43 @@
 .quote
     background-size: cover
     width: 100%
-    height: 400px
+    max-height: 400px
     text-align: center
     box-sizing: border-box
     position: relative
     z-index: 1000
     display: flex
     align-items: center
+    justify-content: center
     overflow: hidden
     cursor: pointer
     &__shape
         background-image: url(../assets/images/shape.png)
+        background-size: cover
         width: 170px
         height: 185px
         text-align: center
         line-height: 230px
         display: block
-        margin: auto
+        margin: auto auto
+    @media screen and (max-width: 500px)
+        &__shape
+            height: 100px
+            width: 90px
+            line-height: 120px
+            img
+                width: 30px
+            
+        p
+            font-size: 18px !important
     p
         color: white
         font-size: $middleFont
         font-family: Lato-HairlineThin
     video
         width: 100%
+        box-shadow: 0px 5px 5px 10px #333 
 
     &__preview
         position: absolute
-        top: 100px
-        left: 50%
-        transform: translateX(-50%)
         z-index: 1000

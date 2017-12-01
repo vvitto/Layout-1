@@ -172,6 +172,12 @@ section {
         opacity: 1.0;
         transition: all 300ms;
         transform: scale(1.01); }
+      @media screen and (max-width: 500px) {
+        .header__list-item {
+          width: 100px;
+          height: 110px; }
+          .header__list-item img {
+            width: 40px; } }
   .header__scroller {
     text-align: center;
     color: white;
@@ -247,6 +253,12 @@ section {
         opacity: 1.0;
         transition: all 300ms;
         transform: scale(1.01); }
+      @media screen and (max-width: 500px) {
+        .feature__item_icon {
+          width: 100px;
+          height: 110px; }
+          .feature__item_icon img {
+            width: 40px; } }
 
 .about {
   font-family: Lato-HairlineReg;
@@ -282,34 +294,43 @@ section {
 .quote {
   background-size: cover;
   width: 100%;
-  height: 400px;
+  max-height: 400px;
   text-align: center;
   box-sizing: border-box;
   position: relative;
   z-index: 1000;
   display: flex;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
   cursor: pointer; }
   .quote__shape {
     background-image: url(../assets/images/shape.png);
+    background-size: cover;
     width: 170px;
     height: 185px;
     text-align: center;
     line-height: 230px;
     display: block;
-    margin: auto; }
+    margin: auto auto; }
+  @media screen and (max-width: 500px) {
+    .quote__shape {
+      height: 100px;
+      width: 90px;
+      line-height: 120px; }
+      .quote__shape img {
+        width: 30px; }
+    .quote p {
+      font-size: 18px !important; } }
   .quote p {
     color: white;
     font-size: 24px;
     font-family: Lato-HairlineThin; }
   .quote video {
-    width: 100%; }
+    width: 100%;
+    box-shadow: 0px 5px 5px 10px #333; }
   .quote__preview {
     position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 1000; }
 
 .team .slider__arrows {
