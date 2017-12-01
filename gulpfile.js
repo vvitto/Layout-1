@@ -6,6 +6,8 @@ var imagemin = require("gulp-imagemin");
 var cache = require("gulp-cache");
 var del = require("del");
 var sequence = require("run-sequence");
+var cssnano     = require("gulp-cssnano");
+var autoprefixer= require("gulp-autoprefixer");
 
 gulp.task("sass", function(){
     return gulp.src("src/sass/main.sass")
@@ -36,32 +38,35 @@ gulp.task("browserSync", function(){
     });
 });
 
-gulp.task("watch", ['browserSync', 'sass'], function(){
-    gulp.watch("src/sass/**/*.sass", ["sass"]);
-    gulp.watch("src/pug/**/*.pug", ['pug']);
-    gulp.watch('src/js/**/*.js', browserSync.reload);
-});
-
-
-gulp.task("image", function(){
-    return gulp.src("assets/images/**/*.+(png|jpg|jpeg|svg)")
-            .pipe(cache(imagemin()))
-            .pipe(gulp.dest("src/assets/images"));
+gulp.task('image', function(){
+	return gulp.src("src/assets/**/*.+(png|jpg|jpeg|svg|gif|ico)")
+		.pipe(cache(imagemin({
+			interlaced: true,
+			progressive: true,
+			svgoPlugins: [{removeViewBox: false}]
+		})))
+		.pipe(gulp.dest('dist/assets'));
 });
 
 gulp.task("fonts", function(){
-    return gulp.src("assets/fonts/**/*").pipe(gulp.dest("src/assets/fonts"));
+    return gulp.src("src/css/fonts/**/*").pipe(gulp.dest("dist/css/fonts"));
 });
 
-gulp.task("clean:dist", function(callback){
-    del(["dist/**/*", "!dist/images", "!dist/images/**/*"], callback);
+gulp.task("clean", function(){
+	return del.sync("dist");
 });
 
-gulp.task("clean", function(callback){
-    del("dist");
-    return cache.clearAll(callback);
-});
+gulp.task("build", ['clean', 'fonts','image', 'sass', 'pug'], function(){
+    var buildHtml = gulp.src(['src/*.html'])
+                    .pipe(gulp.dest("dist/"));
 
-gulp.task("build", function(callback){
-    sequence("clean:dist", ['sass', 'pug', 'image', 'fonts'],  callback);
+    var buildCss = gulp.src(['src/css/*.css',])
+                    .pipe(cssnano())
+                    .pipe(gulp.dest('dist/css'));
+
+	var buildFonts = gulp.src('src/assets/fonts/**/*')
+		.pipe(gulp.dest("dist/assets/fonts"));
+
+	var buildJs = gulp.src('src/js/**/*')
+		.pipe(gulp.dest("dist/js"));
 });

@@ -250,7 +250,10 @@ section {
 
 .about {
   font-family: Lato-HairlineReg;
-  font-size: 16px; }
+  font-size: 16px;
+  background-color: #fff;
+  position: relative;
+  z-index: 1000; }
   .about .container {
     display: flex;
     margin: 60px auto;
@@ -277,13 +280,17 @@ section {
       bottom: 0px; }
 
 .quote {
-  background-image: url(../assets/images/quote.png);
   background-size: cover;
   width: 100%;
   height: 400px;
   text-align: center;
-  padding-top: 80px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer; }
   .quote__shape {
     background-image: url(../assets/images/shape.png);
     width: 170px;
@@ -296,6 +303,14 @@ section {
     color: white;
     font-size: 24px;
     font-family: Lato-HairlineThin; }
+  .quote video {
+    width: 100%; }
+  .quote__preview {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; }
 
 .team .slider__arrows {
   display: flex;
