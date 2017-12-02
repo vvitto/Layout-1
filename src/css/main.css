@@ -304,15 +304,10 @@ section {
   justify-content: center;
   overflow: hidden;
   cursor: pointer; }
-  .quote__shape {
-    background-image: url(../assets/images/shape.png);
-    background-size: cover;
-    width: 170px;
-    height: 185px;
-    text-align: center;
-    line-height: 230px;
-    display: block;
-    margin: auto auto; }
+  .quote i {
+    color: white;
+    font-size: 120px;
+    fint-weight: 200; }
   @media screen and (max-width: 500px) {
     .quote__shape {
       height: 100px;
@@ -337,7 +332,7 @@ section {
   display: flex;
   justify-content: center; }
   .team .slider__arrows .slider__arrow {
-    background-image: url(/assets/images/shape-min.png);
+    background-image: url(../assets/images/shape-min.png);
     line-height: 55px;
     background-size: cover;
     width: 50px;
@@ -536,6 +531,10 @@ section {
   margin: 0px 20px;
   text-align: center;
   margin-bottom: 20px; }
+  @media screen and (max-width: 500px) {
+    .portfolio__item {
+      flex-basis: 40%;
+      margin: 5px; } }
   .portfolio__item .name {
     font-size: 20px;
     color: #333; }

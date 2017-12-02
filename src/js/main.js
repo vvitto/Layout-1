@@ -113,4 +113,14 @@ $(document).ready(function(){
         }
     });
 
+    var headers = $(".header__list-item");
+    $(headers).each(function(){
+        var id = $(this).attr("id");
+
+        $(this).on("click", function(){
+            $("html, body").animate({
+                scrollTop: $("section." + id).offset().top
+            },1000);
+        });
+    });
 });

@@ -8,6 +8,8 @@ var del = require("del");
 var sequence = require("run-sequence");
 var cssnano     = require("gulp-cssnano");
 var autoprefixer= require("gulp-autoprefixer");
+var concat = require("gulp-concat");
+
 
 gulp.task("sass", function(){
     return gulp.src("src/sass/main.sass")
@@ -33,6 +35,7 @@ gulp.task("watch", ['browserSync', 'sass'], function(){
     gulp.watch("src/pug/**/*.pug", ['pug']);
     gulp.watch('src/js/**/*.js', browserSync.reload);
 });
+
 
 gulp.task("browserSync", function(){
     browserSync({
