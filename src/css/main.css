@@ -102,25 +102,31 @@ section {
   .header__title {
     text-align: center;
     font-family: "Existence";
-    font-size: 75px;
+    font-size: 15vmin;
     color: white;
     letter-spacing: 3px; }
     .header__title span {
       color: #9f449b; }
-    @media screen and (max-width: 440px) {
+    @media screen and (min-width: 500px) {
       .header__title {
-        font-size: 50px; } }
+        font-size: 70px; } }
   .header__subtitle {
     font-family: "Lato-HairlineThin";
     color: white;
     text-align: center;
     font-size: 42px;
     margin-top: 40px; }
+    @media screen and (max-width: 500px) {
+      .header__subtitle {
+        font-size: 24px; } }
   .header p {
     font-size: 24px;
     color: white;
     text-align: center;
     font-family: "Lato-HairlineThin"; }
+    @media screen and (max-width: 500px) {
+      .header p {
+        font-size: 16px; } }
   .header__list {
     margin: 80px 0px;
     padding: 0px;
